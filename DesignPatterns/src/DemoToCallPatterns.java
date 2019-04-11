@@ -1,4 +1,5 @@
 import CreationalDesignPattern.SingletonExample;
+import CreationalDesignPattern.FactoryDesignPattern.Color;
 import CreationalDesignPattern.FactoryDesignPattern.FactoryPatternForShape;
 import CreationalDesignPattern.FactoryDesignPattern.Shape;
 
@@ -12,11 +13,17 @@ public class DemoToCallPatterns {
 		CallingFactoryDesignPattern();
 	}
 	public static void CallingFactoryDesignPattern() {
-		FactoryPatternForShape shapetype=new FactoryPatternForShape();
-		Shape shape1=shapetype.getShape("Rectangle");
+		FactoryPatternForShape type=new FactoryPatternForShape();
+		Shape shape1=type.getShape("Rectangle");
 		shape1.draw();
-		Shape shape2=shapetype.getShape("Square");
+		Shape shape2=type.getShape("Square");
 		shape2.draw();
+		
+		Color color1=type.getColor("Red");
+		color1.fill();
+		Color color2=type.getColor("Blue");
+		color2.fill();
+		
 	}
 
 }
